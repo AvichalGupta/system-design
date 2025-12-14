@@ -1,0 +1,31 @@
+{
+  "name": "system-design",
+  "version": "1.0.0",
+  "description": "System Design package, contains systems bare bones code implementation.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npx tsc",
+    "start": "clear && npm run build && node gui/picker.js",
+    "runfile": "node",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AvichalGupta/system-design.git"
+  },
+  "author": "Avichal Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AvichalGupta/system-design/issues"
+  },
+  "homepage": "https://github.com/AvichalGupta/system-design#readme",
+  "dependencies": {
+    "@avichal-gupta/dsa": "^1.0.3",
+    "axios": "^1.13.2",
+    "typescript": "^5.9.3"
+  }
+}
