@@ -187,5 +187,5 @@ export class WebScraper {
     }
 }
 
-const scraper = new WebScraper(['https://google.com/', 'https://www.producthunt.com']);
-scraper.scrape();
+// const scraper = new WebScraper(['https://google.com/', 'https://www.producthunt.com']);
+// scraper.scrape();
