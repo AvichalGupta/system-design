@@ -37,4 +37,12 @@ export class LRUCache<T> {
         const newNode: DoublyLinkedListNode<T> = this.doublyLinkedList.pushToFront(value);
         this.nodeMapper.set(key, newNode);
     }
+
+    public getSize(): number {
+        return this.doublyLinkedList.getSize();
+    }
+
+    public getCapacity(): number {
+        return this.maxSize;
+    }
 }
