@@ -56,4 +56,9 @@ export class LRUCache<T> {
     public getCapacity(): number {
         return this.maxSize;
     }
+
+    public flush() {
+        this.nodeMapper.clear();
+        this.doublyLinkedList.clear();
+    }
 }
