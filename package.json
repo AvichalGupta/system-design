@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/AvichalGupta/system-design#readme",
   "dependencies": {
-    "@avichal-gupta/dsa": "^1.0.3",
+    "@avichal-gupta/dsa": "^1.0.7",
     "axios": "^1.13.2",
     "typescript": "^5.9.3"
   }
