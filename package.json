@@ -1,6 +1,6 @@
 {
   "name": "@avichal-gupta/system-design",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "System Design package, contains systems bare bones code implementation.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/AvichalGupta/system-design#readme",
   "dependencies": {
-    "@avichal-gupta/dsa": "^1.0.11",
+    "@avichal-gupta/dsa": "^1.0.12",
     "axios": "^1.13.2",
     "typescript": "^5.9.3"
   }
