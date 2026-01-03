@@ -25,7 +25,7 @@ export class LRUCache<T> {
         const existingNode = this.nodeMapper.get(key);
         this.doublyLinkedList.unlinkNode(existingNode!);
         this.nodeMapper.delete(key);
-        const newNode: DoublyLinkedListNode<LRUInternalType<T>> = this.doublyLinkedList.pushToFront(existingNode?.data!);
+        const newNode: DoublyLinkedListNode<LRUInternalType<T>> = this.doublyLinkedList.pushAfterHead(existingNode?.data!);
         this.nodeMapper.set(key, newNode);
         return newNode.data?.value ?? null;
     }
@@ -35,7 +35,7 @@ export class LRUCache<T> {
             const existingNode = this.nodeMapper.get(key);
             this.doublyLinkedList.unlinkNode(existingNode!);
         } else if (this.nodeMapper.size >= this.maxSize) {
-            const poppedNode = this.doublyLinkedList.popFromBack();
+            const poppedNode = this.doublyLinkedList.popBeforeTail();
             if (poppedNode.data) {
                 this.nodeMapper.delete(poppedNode.data.key);
             }
@@ -45,7 +45,7 @@ export class LRUCache<T> {
             key,
             value
         }
-        const newNode: DoublyLinkedListNode<LRUInternalType<T>> = this.doublyLinkedList.pushToFront(lruInternalItf);
+        const newNode: DoublyLinkedListNode<LRUInternalType<T>> = this.doublyLinkedList.pushAfterHead(lruInternalItf);
         this.nodeMapper.set(key, newNode);
     }
 
