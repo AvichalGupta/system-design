@@ -45,7 +45,7 @@ export class LRUCache<T> {
     #intervalId: number;
 
     private maxSize: number;
-    constructor(ops?: LRUCacheOptions) {
+    constructor(ops?: Partial<LRUCacheOptions>) {
         if (ops) {
             this.validateCacheOptions(ops);
         }
@@ -70,7 +70,7 @@ export class LRUCache<T> {
         this.#sweep();
     }
 
-    validateCacheOptions(opts: LRUCacheOptions) {
+    validateCacheOptions(opts: Partial<LRUCacheOptions>) {
         if (opts.maxSize && (!Number.isInteger(opts.maxSize) || opts.maxSize <= 0)) {
             throw new Error('maxSize must be a positive integer');
         }
@@ -103,7 +103,7 @@ export class LRUCache<T> {
 
             // Safety cap (event loop protection)
             if (opts.ttlSweepWindowDuration) {
-                if (opts.ttlSweepWindowDuration > opts.ttlSweepTimeInMS) {
+                if (opts.ttlSweepTimeInMS && opts.ttlSweepWindowDuration > opts.ttlSweepTimeInMS) {
                     throw new Error('ttlSweepWindowDuration must be <= ttlSweepTimeInMS')
                 } else if (opts.ttlSweepWindowDuration > DEFAULT_TTL_SWEEP_DURATION) {
                     throw new Error(`ttlSweepWindowDuration must be <= ${DEFAULT_TTL_SWEEP_DURATION}ms to avoid event loop blocking`);
