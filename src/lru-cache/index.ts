@@ -334,7 +334,7 @@ export class LRUCache<T> {
     }
 
     public getTTL(key: string): number {
-        return this.#nodeMapper.get(key)?.ttl ?? 0;
+        return (performance.now() - (this.#nodeMapper.get(key)?.ttl ?? 0));
     }
 
     public getSize(): number {
