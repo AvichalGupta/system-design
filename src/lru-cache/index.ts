@@ -333,6 +333,10 @@ export class LRUCache<T> {
         return false;
     }
 
+    public getTTL(key: string): number {
+        return this.#nodeMapper.get(key)?.ttl ?? 0;
+    }
+
     public getSize(): number {
         return this.#doublyLinkedList.getSize();
     }
