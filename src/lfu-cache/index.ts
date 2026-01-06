@@ -133,7 +133,7 @@ export class LFUCache<T> {
             clearTimeout(this.#intervalId);
         }
 
-        const start = performance.now();
+        const start = Date.now();
 
         if (this.#cacheOptions.useTimeBoundedTTLSweep) {
             this.#timeBasedTTLVerification();
@@ -141,7 +141,7 @@ export class LFUCache<T> {
             this.#countBasedTTLVerfication();
         }
 
-        const end = performance.now();
+        const end = Date.now();
         const elapsed = end - start;
 
         const delay = Math.max(this.#cacheOptions.ttlSweepTimeInMS - elapsed, 0);
@@ -154,7 +154,7 @@ export class LFUCache<T> {
             return;
         }
 
-        const now = performance.timeOrigin + performance.now();
+        const now = Date.now();
         
         for (let i = 0; i < this.#cacheOptions.ttlSweepWindowSize; i++) {
             const ttlNextIterator = this.#ttlIterator.next();
@@ -179,10 +179,10 @@ export class LFUCache<T> {
             return;
         }
 
-        const start = performance.now();
-        const now = performance.timeOrigin + start;
+        const start = Date.now();
+        const now = start;
 
-        while (performance.now() - start < this.#cacheOptions.ttlSweepWindowDuration) {
+        while (Date.now() - start < this.#cacheOptions.ttlSweepWindowDuration) {
             const ttlNextIterator = this.#ttlIterator.next();
 
             if (ttlNextIterator.done) {
@@ -200,7 +200,7 @@ export class LFUCache<T> {
     }
 
     public get(key: string): T | null {
-        const now = performance.timeOrigin + performance.now();
+        const now = Date.now();
 
         if (!this.#nodeMapper.has(key)) {
             return null;
@@ -257,7 +257,7 @@ export class LFUCache<T> {
     }
 
     public put(key: string, value: T, ttl?: number): boolean {
-        const now = performance.timeOrigin + performance.now();
+        const now = Date.now();
 
         let ttlToBeSet: number | null = null;
 
@@ -434,7 +434,7 @@ export class LFUCache<T> {
 
         if (ttl <= 0) throw new Error('TTL can only be increased not decreaed. TTL must be positive non-zero');
         
-        const now = performance.timeOrigin + performance.now();
+        const now = Date.now();
 
         if (this.#nodeMapper.has(key)) {
             
@@ -465,7 +465,7 @@ export class LFUCache<T> {
     }
     
     public getTTL(key: string): number {
-        return Math.max(0, (this.#nodeMapper.get(key)?.ttl ?? 0) - performance.now());
+        return Math.max(0, (this.#nodeMapper.get(key)?.ttl ?? 0) - Date.now());
     }
 
     public getSize(): number {

@@ -1,6 +1,6 @@
 {
   "name": "@avichal-gupta/system-design",
-  "version": "1.0.12",
+  "version": "1.0.14",
   "description": "System Design package, contains systems bare bones code implementation.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
