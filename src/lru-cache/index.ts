@@ -42,7 +42,7 @@ export class LRUCache<T> {
     // Stores cache options
     #cacheOptions: LRUCacheOptions;
 
-    #intervalId: number;
+    #intervalId: ReturnType<typeof setTimeout> | null;
 
     private maxSize: number;
     constructor(ops?: Partial<LRUCacheOptions>) {
@@ -65,7 +65,7 @@ export class LRUCache<T> {
         this.#ttlKeyStore = new Set<string>();
         this.#ttlIterator = this.#ttlKeyStore.keys();
         this.#doublyLinkedList = new DoublyLinkedList<LRUInternalType<T>>({ maxSize: this.maxSize });
-        this.#intervalId = 0;
+        this.#intervalId = null;
 
         this.#sweep();
     }

@@ -1,0 +1,24 @@
+Whatsapp
+    Features:
+        - User Login/Signup.
+        - Users can add Contacts or sync existing Contacts.
+        - Users can initiate chats with one or more users(groups).
+        - Users can Create/Read/Archive/Block/Mute Chats. Mute Chats is only available on business chats or groups.
+        - Users can Create Groups:
+            - Admins can Add/Remove users.
+            - Admins can decide the messaging Policy: Only Admins/Everyone.
+            - Users can Mute/Exit/Clear/Delete/Archive Group Chats.
+        - Users can delete their message either in their chat or in the entire room.
+        - Users can edit their messages.
+        - Users must be shown all chats that they initiated or they are a participant of based on recency.
+        - Users online/offline indicator
+        - Chats must show a preview of the last message and a count of messages since the last read message.
+        - Chats must allow text/audio/video/files content types.
+        - Chats can be backed-up, including or excluding media files. Locally.
+        - Chats must be end to end encrypted.
+        - Messages must be marked delivered:
+            - for sender, when they are received by server.
+            - for receiver, when they are sent to the receiver by the server.
+        - Messages must be marked read:
+            - for receivers, when the chat is opened by the receiver.
+        - Global search, searches all chats all messages and returns all chats with strings that match
