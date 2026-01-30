@@ -4,10 +4,10 @@ import { Conversations } from "./entities/conversations/service";
 import { Messages } from "./entities/messages/service";
 import { Users } from "./entities/users/service";
 import { Logger } from "./logger/service";
-import { ConversationMetaDataControllerBusinessLayer } from "./business_logic/conversation_metadata/controller";
-import { ConversationControllerBusinessLayer } from "./business_logic/conversations/controller";
-import { MessageControllerBusinessLayer } from "./business_logic/messages/controller";
-import { UserControllerBusinessLayer } from "./business_logic/users/controller";
+import { ConversationMetaDataControllerBusinessLayer } from "./business_layer/conversation_metadata/controller";
+import { ConversationControllerBusinessLayer } from "./business_layer/conversations/controller";
+import { MessageControllerBusinessLayer } from "./business_layer/messages/controller";
+import { UserControllerBusinessLayer } from "./business_layer/users/controller";
 
 // SingleTon In Memory Databases
 export const UsersDB = new Map<string, UserSchema>(); // UserSchema.uniqueId as key, used to store user state

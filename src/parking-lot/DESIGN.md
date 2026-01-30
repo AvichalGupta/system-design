@@ -1,0 +1,8 @@
+ - Differentiate Vehicles (2/3/4 wheeler).
+ - Multi-Levels Capacity Handling.
+ - Multi Entry/Exit points.
+ - Show live count of empty parking spaces.
+ - Show empty parking slots in layout.
+ - Verify if slot is full/empty.
+ - Payment processing at exit.
+ - Reservation and assistance by path guiding.

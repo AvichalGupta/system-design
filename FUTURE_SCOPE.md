@@ -1,0 +1,8 @@
+- [ ] Parking Lot Management System
+- [ ] Elevator Control System
+- [ ] Expense Splitting Application
+- [ ] Taxi Application
+- [ ] Food Delivery Application
+- [ ] Offile Reservation Application (Meet Room/Movie/Restaurant)
+- [ ] Onile Reservation Application (Google Calendar)
+- [ ] Online Chess Application 
