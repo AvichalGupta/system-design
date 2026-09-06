@@ -26,6 +26,10 @@ export type IConversationWithMetaData = Pick<
     'icon'
 >;
 
+export interface ISrvcUpdateConvoWithMetaData {
+    conversationId: string;
+}
+
 export interface IControllerGetConversationWithMetaDataPayload {
     conversationId: string;
     participantId: string;

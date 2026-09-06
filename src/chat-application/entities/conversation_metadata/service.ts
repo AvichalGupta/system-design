@@ -63,7 +63,7 @@ export class ConversationMetaData {
         return ConversationsMetaDataDB.get(conversationMetaDataDBPayload.conversationId)!;
     }
 
-    updateConversationMetaData(conversationId: string, updatedPayload: Partial<ConversationMetaDataSchema>) {
+    updateConversationMetaData(conversationId: string, updatedPayload: Partial<ConversationMetaDataSchema>): void {
         
         if (!ConversationsMetaDataDB.has(conversationId)) {
             throw new Error('conversation metadata does not exist.');
